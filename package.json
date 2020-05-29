@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --hot --mode development",
     "build": "webpack --mode production",
-    "lint": "eslint",
+    "test": "jest --watchAll",
     "deploy": "webpack --mode production && git commit -am 'latest build' && git push origin master"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.13.2",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
     "lint-staged": ">=10",
