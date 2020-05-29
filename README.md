@@ -3,7 +3,7 @@
 [![node][node]][node-url]
 [![deps][deps]][deps-url]
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
-[![GitHub issues]][issues][issues-url]
+[![GitHub issues]]([issues])[issues-url]
 
 
 
