@@ -18,7 +18,6 @@ module.exports = {
                 options: {
                     emitError: true,
                     emitWarning: true,
-                    cache: true,
                     fix: true,
                 },
             },
