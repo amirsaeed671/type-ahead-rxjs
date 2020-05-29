@@ -16,6 +16,7 @@
     },
     "rules": {
         "indent": ["error", 4],
-        "eol-last": 2
+        "eol-last": 0,
+        "no-console": 0
     }
 }
