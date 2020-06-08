@@ -6,9 +6,10 @@
   "scripts": {
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server",
+    "jest": "jest",
     "dev": "npm run webpack-dev-server -- --hot --env.mode development",
     "prod": "npm run webpack -- --env.mode production",
-    "test": "jest --watchAll",
+    "test": "npm run jest -- --watchAll",
     "deploy": "npm run webpack -- --env.mode production && git commit -am 'latest build' && git push origin master"
   },
   "repository": {

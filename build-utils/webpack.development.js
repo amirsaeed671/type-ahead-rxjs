@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const PrettierPlugin = require('prettier-webpack-plugin');
 
 module.exports = () => ({
@@ -15,7 +16,6 @@ module.exports = () => ({
                 options: {
                     emitError: true,
                     emitWarning: true,
-                    fix: true,
                 },
             },
             {
@@ -34,5 +34,6 @@ module.exports = () => ({
             singleQuote: true,
             endOfLine: 'lf',
         }),
+        // new webpack.WatchIgnorePlugin([ /\.js$/, /\.d\.ts$/ ])
     ],
 });
