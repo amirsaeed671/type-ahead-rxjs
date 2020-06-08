@@ -2,15 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Type Ahead 👀</title>
+        <title>Type Ahead RxJS 👀</title>
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <form class="search-form">
-            <input type="text" class="search" placeholder="City or State" />
-            <ul class="suggestions">
-                <li>Filter for a city</li>
-                <li>or a state</li>
+            <input
+                type="text"
+                class="search"
+                id="search"
+                placeholder="Repository or Project"
+            />
+            <ul class="suggestions" id="suggestions">
+                <li>Filter for a repository</li>
             </ul>
         </form>
     </body>

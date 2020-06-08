@@ -17,7 +17,10 @@
     "rules": {
         "indent": ["error", 4],
         "eol-last": 0,
-        "no-console": 0
+        "no-console": 0,
+        "no-use-before-define": 0,
+        "implicit-arrow-linebreak": 0,
+        "function-paren-newline": 0,
     },
     "overrides": [
         {
