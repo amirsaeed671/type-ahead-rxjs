@@ -1,53 +1,39 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const PrettierPlugin = require('prettier-webpack-plugin');
+const presetsConfig = require('./build-utils/presets/loadPresets');
+const modeConfig = (env) => require(`./build-utils/webpack.${env}`)(env);
+const webpackMerge = require('webpack-merge');
 
-module.exports = {
-    entry: './src/index.js',
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'docs'),
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                enforce: 'pre',
-                loader: 'eslint-loader',
-                options: {
-                    emitError: true,
-                    emitWarning: true,
-                    fix: true,
-                },
+module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
+    return webpackMerge(
+        {
+            mode,
+            entry: './src/index.js',
+            module: {
+                rules: [
+                    {
+                        test: /\.jpe?g$/,
+                        use: {
+                            loader: 'url-loader',
+                            options: {
+                                limit: 5000,
+                            },
+                        },
+                    },
+                ],
             },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env'],
-                },
+            plugins: [
+                new HtmlWebpackPlugin({
+                    template: path.join(__dirname, '/public/index.html'),
+                    filename: 'index.html',
+                    inject: 'body',
+                }),
+            ],
+            devServer: {
+                stats: 'errors-warnings',
             },
-            {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
-            },
-        ],
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, '/public/index.html'),
-            filename: 'index.html',
-            inject: 'body',
-        }),
-        new PrettierPlugin({
-            tabWidth: 4,
-            singleQuote: true,
-            endOfLine: 'lf',
-        }),
-    ],
-    devServer: {
-        stats: 'errors-warnings',
-    },
+        },
+        modeConfig(mode),
+        presetsConfig({ mode, presets })
+    );
 };
