@@ -9,7 +9,7 @@
     "dev": "npm run webpack-dev-server -- --hot --env.mode development",
     "prod": "npm run webpack -- --env.mode production",
     "test": "jest --watchAll",
-    "deploy": "webpack --mode production && git commit -am 'latest build' && git push origin master"
+    "deploy": "npm run webpack -- --env.mode production && git commit -am 'latest build' && git push origin master"
   },
   "repository": {
     "type": "git",
