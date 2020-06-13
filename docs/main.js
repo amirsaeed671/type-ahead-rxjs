@@ -1,307 +1,96 @@
-!(function (n) {
-  var r = {};
-  function t(e) {
-    if (r[e]) return r[e].exports;
-    var o = (r[e] = { i: e, l: !1, exports: {} });
-    return n[e].call(o.exports, o, o.exports, t), (o.l = !0), o.exports;
-  }
-  (t.m = n),
-    (t.c = r),
-    (t.d = function (n, r, e) {
-      t.o(n, r) || Object.defineProperty(n, r, { enumerable: !0, get: e });
-    }),
-    (t.r = function (n) {
-      "undefined" != typeof Symbol &&
-        Symbol.toStringTag &&
-        Object.defineProperty(n, Symbol.toStringTag, { value: "Module" }),
-        Object.defineProperty(n, "__esModule", { value: !0 });
-    }),
-    (t.t = function (n, r) {
-      if ((1 & r && (n = t(n)), 8 & r)) return n;
-      if (4 & r && "object" == typeof n && n && n.__esModule) return n;
-      var e = Object.create(null);
-      if (
-        (t.r(e),
-        Object.defineProperty(e, "default", { enumerable: !0, value: n }),
-        2 & r && "string" != typeof n)
-      )
-        for (var o in n)
-          t.d(
-            e,
-            o,
-            function (r) {
-              return n[r];
-            }.bind(null, o)
-          );
-      return e;
-    }),
-    (t.n = function (n) {
-      var r =
-        n && n.__esModule
-          ? function () {
-              return n.default;
-            }
-          : function () {
-              return n;
-            };
-      return t.d(r, "a", r), r;
-    }),
-    (t.o = function (n, r) {
-      return Object.prototype.hasOwnProperty.call(n, r);
-    }),
-    (t.p = ""),
-    t((t.s = 4));
+!(function (t) {
+    var e = {};
+    function r(n) {
+        if (e[n]) return e[n].exports;
+        var i = (e[n] = { i: n, l: !1, exports: {} });
+        return t[n].call(i.exports, i, i.exports, r), (i.l = !0), i.exports;
+    }
+    (r.m = t),
+        (r.c = e),
+        (r.d = function (t, e, n) {
+            r.o(t, e) ||
+                Object.defineProperty(t, e, { enumerable: !0, get: n });
+        }),
+        (r.r = function (t) {
+            'undefined' != typeof Symbol &&
+                Symbol.toStringTag &&
+                Object.defineProperty(t, Symbol.toStringTag, {
+                    value: 'Module',
+                }),
+                Object.defineProperty(t, '__esModule', { value: !0 });
+        }),
+        (r.t = function (t, e) {
+            if ((1 & e && (t = r(t)), 8 & e)) return t;
+            if (4 & e && 'object' == typeof t && t && t.__esModule) return t;
+            var n = Object.create(null);
+            if (
+                (r.r(n),
+                Object.defineProperty(n, 'default', {
+                    enumerable: !0,
+                    value: t,
+                }),
+                2 & e && 'string' != typeof t)
+            )
+                for (var i in t)
+                    r.d(
+                        n,
+                        i,
+                        function (e) {
+                            return t[e];
+                        }.bind(null, i),
+                    );
+            return n;
+        }),
+        (r.n = function (t) {
+            var e =
+                t && t.__esModule
+                    ? function () {
+                          return t.default;
+                      }
+                    : function () {
+                          return t;
+                      };
+            return r.d(e, 'a', e), e;
+        }),
+        (r.o = function (t, e) {
+            return Object.prototype.hasOwnProperty.call(t, e);
+        }),
+        (r.p = ''),
+        r((r.s = 3));
 })([
-  function (n, r, t) {
-    var e = t(1),
-      o = t(2);
-    "string" == typeof (o = o.__esModule ? o.default : o) &&
-      (o = [[n.i, o, ""]]);
-    var i = { insert: "head", singleton: !1 };
-    e(o, i);
-    n.exports = o.locals || {};
-  },
-  function (n, r, t) {
-    "use strict";
-    var e,
-      o = function () {
-        return (
-          void 0 === e &&
-            (e = Boolean(window && document && document.all && !window.atob)),
-          e
-        );
-      },
-      i = (function () {
-        var n = {};
-        return function (r) {
-          if (void 0 === n[r]) {
-            var t = document.querySelector(r);
-            if (
-              window.HTMLIFrameElement &&
-              t instanceof window.HTMLIFrameElement
-            )
-              try {
-                t = t.contentDocument.head;
-              } catch (n) {
-                t = null;
-              }
-            n[r] = t;
-          }
-          return n[r];
-        };
-      })(),
-      s = [];
-    function u(n) {
-      for (var r = -1, t = 0; t < s.length; t++)
-        if (s[t].identifier === n) {
-          r = t;
-          break;
+    function (t, e, r) {
+        'use strict';
+        (function (t) {
+            r.d(e, 'a', function () {
+                return o;
+            });
+            var n = 'undefined' != typeof window && window,
+                i =
+                    'undefined' != typeof self &&
+                    'undefined' != typeof WorkerGlobalScope &&
+                    self instanceof WorkerGlobalScope &&
+                    self,
+                o = n || (void 0 !== t && t) || i;
+        }.call(this, r(2)));
+    },
+    function (t, e, r) {},
+    function (t, e) {
+        var r;
+        r = (function () {
+            return this;
+        })();
+        try {
+            r = r || new Function('return this')();
+        } catch (t) {
+            'object' == typeof window && (r = window);
         }
-      return r;
-    }
-    function c(n, r) {
-      for (var t = {}, e = [], o = 0; o < n.length; o++) {
-        var i = n[o],
-          c = r.base ? i[0] + r.base : i[0],
-          a = t[c] || 0,
-          f = "".concat(c, " ").concat(a);
-        t[c] = a + 1;
-        var l = u(f),
-          p = { css: i[1], media: i[2], sourceMap: i[3] };
-        -1 !== l
-          ? (s[l].references++, s[l].updater(p))
-          : s.push({ identifier: f, updater: y(p, r), references: 1 }),
-          e.push(f);
-      }
-      return e;
-    }
-    function a(n) {
-      var r = document.createElement("style"),
-        e = n.attributes || {};
-      if (void 0 === e.nonce) {
-        var o = t.nc;
-        o && (e.nonce = o);
-      }
-      if (
-        (Object.keys(e).forEach(function (n) {
-          r.setAttribute(n, e[n]);
-        }),
-        "function" == typeof n.insert)
-      )
-        n.insert(r);
-      else {
-        var s = i(n.insert || "head");
-        if (!s)
-          throw new Error(
-            "Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid."
-          );
-        s.appendChild(r);
-      }
-      return r;
-    }
-    var f,
-      l =
-        ((f = []),
-        function (n, r) {
-          return (f[n] = r), f.filter(Boolean).join("\n");
-        });
-    function p(n, r, t, e) {
-      var o = t
-        ? ""
-        : e.media
-        ? "@media ".concat(e.media, " {").concat(e.css, "}")
-        : e.css;
-      if (n.styleSheet) n.styleSheet.cssText = l(r, o);
-      else {
-        var i = document.createTextNode(o),
-          s = n.childNodes;
-        s[r] && n.removeChild(s[r]),
-          s.length ? n.insertBefore(i, s[r]) : n.appendChild(i);
-      }
-    }
-    function d(n, r, t) {
-      var e = t.css,
-        o = t.media,
-        i = t.sourceMap;
-      if (
-        (o ? n.setAttribute("media", o) : n.removeAttribute("media"),
-        i &&
-          btoa &&
-          (e += "\n/*# sourceMappingURL=data:application/json;base64,".concat(
-            btoa(unescape(encodeURIComponent(JSON.stringify(i)))),
-            " */"
-          )),
-        n.styleSheet)
-      )
-        n.styleSheet.cssText = e;
-      else {
-        for (; n.firstChild; ) n.removeChild(n.firstChild);
-        n.appendChild(document.createTextNode(e));
-      }
-    }
-    var h = null,
-      b = 0;
-    function y(n, r) {
-      var t, e, o;
-      if (r.singleton) {
-        var i = b++;
-        (t = h || (h = a(r))),
-          (e = p.bind(null, t, i, !1)),
-          (o = p.bind(null, t, i, !0));
-      } else
-        (t = a(r)),
-          (e = d.bind(null, t, r)),
-          (o = function () {
-            !(function (n) {
-              if (null === n.parentNode) return !1;
-              n.parentNode.removeChild(n);
-            })(t);
-          });
-      return (
-        e(n),
-        function (r) {
-          if (r) {
-            if (
-              r.css === n.css &&
-              r.media === n.media &&
-              r.sourceMap === n.sourceMap
-            )
-              return;
-            e((n = r));
-          } else o();
-        }
-      );
-    }
-    n.exports = function (n, r) {
-      (r = r || {}).singleton ||
-        "boolean" == typeof r.singleton ||
-        (r.singleton = o());
-      var t = c((n = n || []), r);
-      return function (n) {
-        if (
-          ((n = n || []),
-          "[object Array]" === Object.prototype.toString.call(n))
-        ) {
-          for (var e = 0; e < t.length; e++) {
-            var o = u(t[e]);
-            s[o].references--;
-          }
-          for (var i = c(n, r), a = 0; a < t.length; a++) {
-            var f = u(t[a]);
-            0 === s[f].references && (s[f].updater(), s.splice(f, 1));
-          }
-          t = i;
-        }
-      };
-    };
-  },
-  function (n, r, t) {
-    (r = t(3)(!1)).push([
-      n.i,
-      'html {\n  box-sizing: border-box;\n  background: #ffc600;\n  font-family: "helvetica neue";\n  font-size: 20px;\n  font-weight: 200;\n}\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit;\n}\n\ninput {\n  width: 100%;\n  padding: 20px;\n}\n\n.search-form {\n  max-width: 400px;\n  margin: 50px auto;\n}\n\ninput.search {\n  margin: 0;\n  text-align: center;\n  outline: 0;\n  border: 10px solid #f7f7f7;\n  width: 120%;\n  left: -10%;\n  position: relative;\n  top: 10px;\n  z-index: 2;\n  border-radius: 5px;\n  font-size: 40px;\n  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);\n}\n\n.suggestions {\n  margin: 0;\n  padding: 0;\n  position: relative;\n  /*perspective: 20px;*/\n}\n\n.suggestions li {\n  background: white;\n  list-style: none;\n  border-bottom: 1px solid #d8d8d8;\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);\n  margin: 0;\n  padding: 20px;\n  transition: background 0.2s;\n  display: flex;\n  justify-content: space-between;\n  text-transform: capitalize;\n}\n\n.suggestions li:nth-child(even) {\n  transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);\n  background: linear-gradient(to bottom, #ffffff 0%, #efefef 100%);\n}\n\n.suggestions li:nth-child(odd) {\n  transform: perspective(100px) rotateX(-3deg) translateY(3px);\n  background: linear-gradient(to top, #ffffff 0%, #efefef 100%);\n}\n\nspan.population {\n  font-size: 15px;\n}\n\n.hl {\n  background: #ffc600;\n}\n',
-      "",
-    ]),
-      (n.exports = r);
-  },
-  function (n, r, t) {
-    "use strict";
-    n.exports = function (n) {
-      var r = [];
-      return (
-        (r.toString = function () {
-          return this.map(function (r) {
-            var t = (function (n, r) {
-              var t = n[1] || "",
-                e = n[3];
-              if (!e) return t;
-              if (r && "function" == typeof btoa) {
-                var o =
-                    ((s = e),
-                    (u = btoa(unescape(encodeURIComponent(JSON.stringify(s))))),
-                    (c = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(
-                      u
-                    )),
-                    "/*# ".concat(c, " */")),
-                  i = e.sources.map(function (n) {
-                    return "/*# sourceURL="
-                      .concat(e.sourceRoot || "")
-                      .concat(n, " */");
-                  });
-                return [t].concat(i).concat([o]).join("\n");
-              }
-              var s, u, c;
-              return [t].join("\n");
-            })(r, n);
-            return r[2] ? "@media ".concat(r[2], " {").concat(t, "}") : t;
-          }).join("");
-        }),
-        (r.i = function (n, t, e) {
-          "string" == typeof n && (n = [[null, n, ""]]);
-          var o = {};
-          if (e)
-            for (var i = 0; i < this.length; i++) {
-              var s = this[i][0];
-              null != s && (o[s] = !0);
-            }
-          for (var u = 0; u < n.length; u++) {
-            var c = [].concat(n[u]);
-            (e && o[c[0]]) ||
-              (t &&
-                (c[2]
-                  ? (c[2] = "".concat(t, " and ").concat(c[2]))
-                  : (c[2] = t)),
-              r.push(c));
-          }
-        }),
-        r
-      );
-    };
-  },
-  function (n, r, t) {
-    "use strict";
-    t.r(r);
-    t(0);
-    /*! *****************************************************************************
+        t.exports = r;
+    },
+    function (t, e, r) {
+        'use strict';
+        r.r(e);
+        r(1);
+        /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -314,731 +103,1984 @@ INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
 LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */ var e = function (
-      n,
-      r
-    ) {
-      return (e =
-        Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array &&
-          function (n, r) {
-            n.__proto__ = r;
-          }) ||
-        function (n, r) {
-          for (var t in r) r.hasOwnProperty(t) && (n[t] = r[t]);
-        })(n, r);
-    };
-    function o(n, r) {
-      function t() {
-        this.constructor = n;
-      }
-      e(n, r),
-        (n.prototype =
-          null === r
-            ? Object.create(r)
-            : ((t.prototype = r.prototype), new t()));
-    }
-    function i(n) {
-      return "function" == typeof n;
-    }
-    var s = !1,
-      u = {
-        Promise: void 0,
-        set useDeprecatedSynchronousErrorHandling(n) {
-          n && new Error().stack;
-          s = n;
-        },
-        get useDeprecatedSynchronousErrorHandling() {
-          return s;
-        },
-      };
-    function c(n) {
-      setTimeout(function () {
-        throw n;
-      }, 0);
-    }
-    var a = {
-        closed: !0,
-        next: function (n) {},
-        error: function (n) {
-          if (u.useDeprecatedSynchronousErrorHandling) throw n;
-          c(n);
-        },
-        complete: function () {},
-      },
-      f = (function () {
-        return (
-          Array.isArray ||
-          function (n) {
-            return n && "number" == typeof n.length;
-          }
-        );
-      })();
-    function l(n) {
-      return null !== n && "object" == typeof n;
-    }
-    var p = (function () {
-        function n(n) {
-          return (
-            Error.call(this),
-            (this.message = n
-              ? n.length +
-                " errors occurred during unsubscription:\n" +
-                n
-                  .map(function (n, r) {
-                    return r + 1 + ") " + n.toString();
-                  })
-                  .join("\n  ")
-              : ""),
-            (this.name = "UnsubscriptionError"),
-            (this.errors = n),
-            this
-          );
+***************************************************************************** */ var n = function (
+            t,
+            e,
+        ) {
+            return (n =
+                Object.setPrototypeOf ||
+                ({ __proto__: [] } instanceof Array &&
+                    function (t, e) {
+                        t.__proto__ = e;
+                    }) ||
+                function (t, e) {
+                    for (var r in e) e.hasOwnProperty(r) && (t[r] = e[r]);
+                })(t, e);
+        };
+        function i(t, e) {
+            function r() {
+                this.constructor = t;
+            }
+            n(t, e),
+                (t.prototype =
+                    null === e
+                        ? Object.create(e)
+                        : ((r.prototype = e.prototype), new r()));
         }
-        return (n.prototype = Object.create(Error.prototype)), n;
-      })(),
-      d = (function () {
-        function n(n) {
-          (this.closed = !1),
-            (this._parentOrParents = null),
-            (this._subscriptions = null),
-            n && (this._unsubscribe = n);
+        function o(t) {
+            return 'function' == typeof t;
         }
-        return (
-          (n.prototype.unsubscribe = function () {
-            var r;
-            if (!this.closed) {
-              var t = this._parentOrParents,
-                e = this._unsubscribe,
-                o = this._subscriptions;
-              if (
-                ((this.closed = !0),
-                (this._parentOrParents = null),
-                (this._subscriptions = null),
-                t instanceof n)
-              )
-                t.remove(this);
-              else if (null !== t)
-                for (var s = 0; s < t.length; ++s) {
-                  t[s].remove(this);
-                }
-              if (i(e))
-                try {
-                  e.call(this);
-                } catch (n) {
-                  r = n instanceof p ? h(n.errors) : [n];
-                }
-              if (f(o)) {
-                s = -1;
-                for (var u = o.length; ++s < u; ) {
-                  var c = o[s];
-                  if (l(c))
-                    try {
-                      c.unsubscribe();
-                    } catch (n) {
-                      (r = r || []),
-                        n instanceof p
-                          ? (r = r.concat(h(n.errors)))
-                          : r.push(n);
+        var s = !1,
+            u = {
+                Promise: void 0,
+                set useDeprecatedSynchronousErrorHandling(t) {
+                    t && new Error().stack;
+                    s = t;
+                },
+                get useDeprecatedSynchronousErrorHandling() {
+                    return s;
+                },
+            };
+        function c(t) {
+            setTimeout(function () {
+                throw t;
+            }, 0);
+        }
+        var a = {
+                closed: !0,
+                next: function (t) {},
+                error: function (t) {
+                    if (u.useDeprecatedSynchronousErrorHandling) throw t;
+                    c(t);
+                },
+                complete: function () {},
+            },
+            h = (function () {
+                return (
+                    Array.isArray ||
+                    function (t) {
+                        return t && 'number' == typeof t.length;
                     }
-                }
-              }
-              if (r) throw new p(r);
-            }
-          }),
-          (n.prototype.add = function (r) {
-            var t = r;
-            if (!r) return n.EMPTY;
-            switch (typeof r) {
-              case "function":
-                t = new n(r);
-              case "object":
-                if (
-                  t === this ||
-                  t.closed ||
-                  "function" != typeof t.unsubscribe
-                )
-                  return t;
-                if (this.closed) return t.unsubscribe(), t;
-                if (!(t instanceof n)) {
-                  var e = t;
-                  (t = new n())._subscriptions = [e];
-                }
-                break;
-              default:
-                throw new Error(
-                  "unrecognized teardown " + r + " added to Subscription."
                 );
-            }
-            var o = t._parentOrParents;
-            if (null === o) t._parentOrParents = this;
-            else if (o instanceof n) {
-              if (o === this) return t;
-              t._parentOrParents = [o, this];
-            } else {
-              if (-1 !== o.indexOf(this)) return t;
-              o.push(this);
-            }
-            var i = this._subscriptions;
-            return null === i ? (this._subscriptions = [t]) : i.push(t), t;
-          }),
-          (n.prototype.remove = function (n) {
-            var r = this._subscriptions;
-            if (r) {
-              var t = r.indexOf(n);
-              -1 !== t && r.splice(t, 1);
-            }
-          }),
-          (n.EMPTY = (function (n) {
-            return (n.closed = !0), n;
-          })(new n())),
-          n
-        );
-      })();
-    function h(n) {
-      return n.reduce(function (n, r) {
-        return n.concat(r instanceof p ? r.errors : r);
-      }, []);
-    }
-    var b = (function () {
-        return "function" == typeof Symbol
-          ? Symbol("rxSubscriber")
-          : "@@rxSubscriber_" + Math.random();
-      })(),
-      y = (function (n) {
-        function r(t, e, o) {
-          var i = n.call(this) || this;
-          switch (
-            ((i.syncErrorValue = null),
-            (i.syncErrorThrown = !1),
-            (i.syncErrorThrowable = !1),
-            (i.isStopped = !1),
-            arguments.length)
-          ) {
-            case 0:
-              i.destination = a;
-              break;
-            case 1:
-              if (!t) {
-                i.destination = a;
-                break;
-              }
-              if ("object" == typeof t) {
-                t instanceof r
-                  ? ((i.syncErrorThrowable = t.syncErrorThrowable),
-                    (i.destination = t),
-                    t.add(i))
-                  : ((i.syncErrorThrowable = !0),
-                    (i.destination = new v(i, t)));
-                break;
-              }
-            default:
-              (i.syncErrorThrowable = !0), (i.destination = new v(i, t, e, o));
-          }
-          return i;
+            })();
+        function p(t) {
+            return null !== t && 'object' == typeof t;
         }
-        return (
-          o(r, n),
-          (r.prototype[b] = function () {
-            return this;
-          }),
-          (r.create = function (n, t, e) {
-            var o = new r(n, t, e);
-            return (o.syncErrorThrowable = !1), o;
-          }),
-          (r.prototype.next = function (n) {
-            this.isStopped || this._next(n);
-          }),
-          (r.prototype.error = function (n) {
-            this.isStopped || ((this.isStopped = !0), this._error(n));
-          }),
-          (r.prototype.complete = function () {
-            this.isStopped || ((this.isStopped = !0), this._complete());
-          }),
-          (r.prototype.unsubscribe = function () {
-            this.closed ||
-              ((this.isStopped = !0), n.prototype.unsubscribe.call(this));
-          }),
-          (r.prototype._next = function (n) {
-            this.destination.next(n);
-          }),
-          (r.prototype._error = function (n) {
-            this.destination.error(n), this.unsubscribe();
-          }),
-          (r.prototype._complete = function () {
-            this.destination.complete(), this.unsubscribe();
-          }),
-          (r.prototype._unsubscribeAndRecycle = function () {
-            var n = this._parentOrParents;
-            return (
-              (this._parentOrParents = null),
-              this.unsubscribe(),
-              (this.closed = !1),
-              (this.isStopped = !1),
-              (this._parentOrParents = n),
-              this
-            );
-          }),
-          r
-        );
-      })(d),
-      v = (function (n) {
-        function r(r, t, e, o) {
-          var s,
-            u = n.call(this) || this;
-          u._parentSubscriber = r;
-          var c = u;
-          return (
-            i(t)
-              ? (s = t)
-              : t &&
-                ((s = t.next),
-                (e = t.error),
-                (o = t.complete),
-                t !== a &&
-                  (i((c = Object.create(t)).unsubscribe) &&
-                    u.add(c.unsubscribe.bind(c)),
-                  (c.unsubscribe = u.unsubscribe.bind(u)))),
-            (u._context = c),
-            (u._next = s),
-            (u._error = e),
-            (u._complete = o),
-            u
-          );
-        }
-        return (
-          o(r, n),
-          (r.prototype.next = function (n) {
-            if (!this.isStopped && this._next) {
-              var r = this._parentSubscriber;
-              u.useDeprecatedSynchronousErrorHandling && r.syncErrorThrowable
-                ? this.__tryOrSetError(r, this._next, n) && this.unsubscribe()
-                : this.__tryOrUnsub(this._next, n);
-            }
-          }),
-          (r.prototype.error = function (n) {
-            if (!this.isStopped) {
-              var r = this._parentSubscriber,
-                t = u.useDeprecatedSynchronousErrorHandling;
-              if (this._error)
-                t && r.syncErrorThrowable
-                  ? (this.__tryOrSetError(r, this._error, n),
-                    this.unsubscribe())
-                  : (this.__tryOrUnsub(this._error, n), this.unsubscribe());
-              else if (r.syncErrorThrowable)
-                t ? ((r.syncErrorValue = n), (r.syncErrorThrown = !0)) : c(n),
-                  this.unsubscribe();
-              else {
-                if ((this.unsubscribe(), t)) throw n;
-                c(n);
-              }
-            }
-          }),
-          (r.prototype.complete = function () {
-            var n = this;
-            if (!this.isStopped) {
-              var r = this._parentSubscriber;
-              if (this._complete) {
-                var t = function () {
-                  return n._complete.call(n._context);
-                };
-                u.useDeprecatedSynchronousErrorHandling && r.syncErrorThrowable
-                  ? (this.__tryOrSetError(r, t), this.unsubscribe())
-                  : (this.__tryOrUnsub(t), this.unsubscribe());
-              } else this.unsubscribe();
-            }
-          }),
-          (r.prototype.__tryOrUnsub = function (n, r) {
-            try {
-              n.call(this._context, r);
-            } catch (n) {
-              if ((this.unsubscribe(), u.useDeprecatedSynchronousErrorHandling))
-                throw n;
-              c(n);
-            }
-          }),
-          (r.prototype.__tryOrSetError = function (n, r, t) {
-            if (!u.useDeprecatedSynchronousErrorHandling)
-              throw new Error("bad call");
-            try {
-              r.call(this._context, t);
-            } catch (r) {
-              return u.useDeprecatedSynchronousErrorHandling
-                ? ((n.syncErrorValue = r), (n.syncErrorThrown = !0), !0)
-                : (c(r), !0);
-            }
-            return !1;
-          }),
-          (r.prototype._unsubscribe = function () {
-            var n = this._parentSubscriber;
-            (this._context = null),
-              (this._parentSubscriber = null),
-              n.unsubscribe();
-          }),
-          r
-        );
-      })(y);
-    var m = (function () {
-      return (
-        ("function" == typeof Symbol && Symbol.observable) || "@@observable"
-      );
-    })();
-    function g(n) {
-      return n;
-    }
-    function w(n) {
-      return 0 === n.length
-        ? g
-        : 1 === n.length
-        ? n[0]
-        : function (r) {
-            return n.reduce(function (n, r) {
-              return r(n);
-            }, r);
-          };
-    }
-    var _ = (function () {
-      function n(n) {
-        (this._isScalar = !1), n && (this._subscribe = n);
-      }
-      return (
-        (n.prototype.lift = function (r) {
-          var t = new n();
-          return (t.source = this), (t.operator = r), t;
-        }),
-        (n.prototype.subscribe = function (n, r, t) {
-          var e = this.operator,
-            o = (function (n, r, t) {
-              if (n) {
-                if (n instanceof y) return n;
-                if (n[b]) return n[b]();
-              }
-              return n || r || t ? new y(n, r, t) : new y(a);
-            })(n, r, t);
-          if (
-            (e
-              ? o.add(e.call(o, this.source))
-              : o.add(
-                  this.source ||
-                    (u.useDeprecatedSynchronousErrorHandling &&
-                      !o.syncErrorThrowable)
-                    ? this._subscribe(o)
-                    : this._trySubscribe(o)
-                ),
-            u.useDeprecatedSynchronousErrorHandling &&
-              o.syncErrorThrowable &&
-              ((o.syncErrorThrowable = !1), o.syncErrorThrown))
-          )
-            throw o.syncErrorValue;
-          return o;
-        }),
-        (n.prototype._trySubscribe = function (n) {
-          try {
-            return this._subscribe(n);
-          } catch (r) {
-            u.useDeprecatedSynchronousErrorHandling &&
-              ((n.syncErrorThrown = !0), (n.syncErrorValue = r)),
-              !(function (n) {
-                for (; n; ) {
-                  var r = n,
-                    t = r.closed,
-                    e = r.destination,
-                    o = r.isStopped;
-                  if (t || o) return !1;
-                  n = e && e instanceof y ? e : null;
-                }
-                return !0;
-              })(n)
-                ? console.warn(r)
-                : n.error(r);
-          }
-        }),
-        (n.prototype.forEach = function (n, r) {
-          var t = this;
-          return new (r = x(r))(function (r, e) {
-            var o;
-            o = t.subscribe(
-              function (r) {
-                try {
-                  n(r);
-                } catch (n) {
-                  e(n), o && o.unsubscribe();
-                }
-              },
-              e,
-              r
-            );
-          });
-        }),
-        (n.prototype._subscribe = function (n) {
-          var r = this.source;
-          return r && r.subscribe(n);
-        }),
-        (n.prototype[m] = function () {
-          return this;
-        }),
-        (n.prototype.pipe = function () {
-          for (var n = [], r = 0; r < arguments.length; r++)
-            n[r] = arguments[r];
-          return 0 === n.length ? this : w(n)(this);
-        }),
-        (n.prototype.toPromise = function (n) {
-          var r = this;
-          return new (n = x(n))(function (n, t) {
-            var e;
-            r.subscribe(
-              function (n) {
-                return (e = n);
-              },
-              function (n) {
-                return t(n);
-              },
-              function () {
-                return n(e);
-              }
-            );
-          });
-        }),
-        (n.create = function (r) {
-          return new n(r);
-        }),
-        n
-      );
-    })();
-    function x(n) {
-      if ((n || (n = u.Promise || Promise), !n))
-        throw new Error("no Promise impl found");
-      return n;
-    }
-    function S() {
-      return "function" == typeof Symbol && Symbol.iterator
-        ? Symbol.iterator
-        : "@@iterator";
-    }
-    var E = S(),
-      O = function (n) {
-        return n && "number" == typeof n.length && "function" != typeof n;
-      };
-    function T(n) {
-      return (
-        !!n && "function" != typeof n.subscribe && "function" == typeof n.then
-      );
-    }
-    var j,
-      P,
-      M = function (n) {
-        if (n && "function" == typeof n[m])
-          return (
-            (o = n),
-            function (n) {
-              var r = o[m]();
-              if ("function" != typeof r.subscribe)
-                throw new TypeError(
-                  "Provided object does not correctly implement Symbol.observable"
-                );
-              return r.subscribe(n);
-            }
-          );
-        if (O(n))
-          return (
-            (e = n),
-            function (n) {
-              for (var r = 0, t = e.length; r < t && !n.closed; r++)
-                n.next(e[r]);
-              n.complete();
-            }
-          );
-        if (T(n))
-          return (
-            (t = n),
-            function (n) {
-              return (
-                t
-                  .then(
-                    function (r) {
-                      n.closed || (n.next(r), n.complete());
-                    },
-                    function (r) {
-                      return n.error(r);
-                    }
-                  )
-                  .then(null, c),
-                n
-              );
-            }
-          );
-        if (n && "function" == typeof n[E])
-          return (
-            (r = n),
-            function (n) {
-              for (var t = r[E](); ; ) {
-                var e = t.next();
-                if (e.done) {
-                  n.complete();
-                  break;
-                }
-                if ((n.next(e.value), n.closed)) break;
-              }
-              return (
-                "function" == typeof t.return &&
-                  n.add(function () {
-                    t.return && t.return();
-                  }),
-                n
-              );
-            }
-          );
-        var r,
-          t,
-          e,
-          o,
-          i = l(n) ? "an invalid object" : "'" + n + "'";
-        throw new TypeError(
-          "You provided " +
-            i +
-            " where a stream was expected. You can provide an Observable, Promise, Array, or Iterable."
-        );
-      };
-    function k(n, r) {
-      if (null != n) {
-        if (
-          (function (n) {
-            return n && "function" == typeof n[m];
-          })(n)
-        )
-          return (function (n, r) {
-            return new _(function (t) {
-              var e = new d();
-              return (
-                e.add(
-                  r.schedule(function () {
-                    var o = n[m]();
-                    e.add(
-                      o.subscribe({
-                        next: function (n) {
-                          e.add(
-                            r.schedule(function () {
-                              return t.next(n);
-                            })
-                          );
-                        },
-                        error: function (n) {
-                          e.add(
-                            r.schedule(function () {
-                              return t.error(n);
-                            })
-                          );
-                        },
-                        complete: function () {
-                          e.add(
-                            r.schedule(function () {
-                              return t.complete();
-                            })
-                          );
-                        },
-                      })
+        var f = (function () {
+                function t(t) {
+                    return (
+                        Error.call(this),
+                        (this.message = t
+                            ? t.length +
+                              ' errors occurred during unsubscription:\n' +
+                              t
+                                  .map(function (t, e) {
+                                      return e + 1 + ') ' + t.toString();
+                                  })
+                                  .join('\n  ')
+                            : ''),
+                        (this.name = 'UnsubscriptionError'),
+                        (this.errors = t),
+                        this
                     );
-                  })
-                ),
+                }
+                return (t.prototype = Object.create(Error.prototype)), t;
+            })(),
+            l = (function () {
+                function t(t) {
+                    (this.closed = !1),
+                        (this._parentOrParents = null),
+                        (this._subscriptions = null),
+                        t && (this._unsubscribe = t);
+                }
+                return (
+                    (t.prototype.unsubscribe = function () {
+                        var e;
+                        if (!this.closed) {
+                            var r = this._parentOrParents,
+                                n = this._unsubscribe,
+                                i = this._subscriptions;
+                            if (
+                                ((this.closed = !0),
+                                (this._parentOrParents = null),
+                                (this._subscriptions = null),
+                                r instanceof t)
+                            )
+                                r.remove(this);
+                            else if (null !== r)
+                                for (var s = 0; s < r.length; ++s) {
+                                    r[s].remove(this);
+                                }
+                            if (o(n))
+                                try {
+                                    n.call(this);
+                                } catch (t) {
+                                    e = t instanceof f ? d(t.errors) : [t];
+                                }
+                            if (h(i)) {
+                                s = -1;
+                                for (var u = i.length; ++s < u; ) {
+                                    var c = i[s];
+                                    if (p(c))
+                                        try {
+                                            c.unsubscribe();
+                                        } catch (t) {
+                                            (e = e || []),
+                                                t instanceof f
+                                                    ? (e = e.concat(
+                                                          d(t.errors),
+                                                      ))
+                                                    : e.push(t);
+                                        }
+                                }
+                            }
+                            if (e) throw new f(e);
+                        }
+                    }),
+                    (t.prototype.add = function (e) {
+                        var r = e;
+                        if (!e) return t.EMPTY;
+                        switch (typeof e) {
+                            case 'function':
+                                r = new t(e);
+                            case 'object':
+                                if (
+                                    r === this ||
+                                    r.closed ||
+                                    'function' != typeof r.unsubscribe
+                                )
+                                    return r;
+                                if (this.closed) return r.unsubscribe(), r;
+                                if (!(r instanceof t)) {
+                                    var n = r;
+                                    (r = new t())._subscriptions = [n];
+                                }
+                                break;
+                            default:
+                                throw new Error(
+                                    'unrecognized teardown ' +
+                                        e +
+                                        ' added to Subscription.',
+                                );
+                        }
+                        var i = r._parentOrParents;
+                        if (null === i) r._parentOrParents = this;
+                        else if (i instanceof t) {
+                            if (i === this) return r;
+                            r._parentOrParents = [i, this];
+                        } else {
+                            if (-1 !== i.indexOf(this)) return r;
+                            i.push(this);
+                        }
+                        var o = this._subscriptions;
+                        return (
+                            null === o
+                                ? (this._subscriptions = [r])
+                                : o.push(r),
+                            r
+                        );
+                    }),
+                    (t.prototype.remove = function (t) {
+                        var e = this._subscriptions;
+                        if (e) {
+                            var r = e.indexOf(t);
+                            -1 !== r && e.splice(r, 1);
+                        }
+                    }),
+                    (t.EMPTY = (function (t) {
+                        return (t.closed = !0), t;
+                    })(new t())),
+                    t
+                );
+            })();
+        function d(t) {
+            return t.reduce(function (t, e) {
+                return t.concat(e instanceof f ? e.errors : e);
+            }, []);
+        }
+        var b = (function () {
+                return 'function' == typeof Symbol
+                    ? Symbol('rxSubscriber')
+                    : '@@rxSubscriber_' + Math.random();
+            })(),
+            y = (function (t) {
+                function e(r, n, i) {
+                    var o = t.call(this) || this;
+                    switch (
+                        ((o.syncErrorValue = null),
+                        (o.syncErrorThrown = !1),
+                        (o.syncErrorThrowable = !1),
+                        (o.isStopped = !1),
+                        arguments.length)
+                    ) {
+                        case 0:
+                            o.destination = a;
+                            break;
+                        case 1:
+                            if (!r) {
+                                o.destination = a;
+                                break;
+                            }
+                            if ('object' == typeof r) {
+                                r instanceof e
+                                    ? ((o.syncErrorThrowable =
+                                          r.syncErrorThrowable),
+                                      (o.destination = r),
+                                      r.add(o))
+                                    : ((o.syncErrorThrowable = !0),
+                                      (o.destination = new v(o, r)));
+                                break;
+                            }
+                        default:
+                            (o.syncErrorThrowable = !0),
+                                (o.destination = new v(o, r, n, i));
+                    }
+                    return o;
+                }
+                return (
+                    i(e, t),
+                    (e.prototype[b] = function () {
+                        return this;
+                    }),
+                    (e.create = function (t, r, n) {
+                        var i = new e(t, r, n);
+                        return (i.syncErrorThrowable = !1), i;
+                    }),
+                    (e.prototype.next = function (t) {
+                        this.isStopped || this._next(t);
+                    }),
+                    (e.prototype.error = function (t) {
+                        this.isStopped ||
+                            ((this.isStopped = !0), this._error(t));
+                    }),
+                    (e.prototype.complete = function () {
+                        this.isStopped ||
+                            ((this.isStopped = !0), this._complete());
+                    }),
+                    (e.prototype.unsubscribe = function () {
+                        this.closed ||
+                            ((this.isStopped = !0),
+                            t.prototype.unsubscribe.call(this));
+                    }),
+                    (e.prototype._next = function (t) {
+                        this.destination.next(t);
+                    }),
+                    (e.prototype._error = function (t) {
+                        this.destination.error(t), this.unsubscribe();
+                    }),
+                    (e.prototype._complete = function () {
+                        this.destination.complete(), this.unsubscribe();
+                    }),
+                    (e.prototype._unsubscribeAndRecycle = function () {
+                        var t = this._parentOrParents;
+                        return (
+                            (this._parentOrParents = null),
+                            this.unsubscribe(),
+                            (this.closed = !1),
+                            (this.isStopped = !1),
+                            (this._parentOrParents = t),
+                            this
+                        );
+                    }),
+                    e
+                );
+            })(l),
+            v = (function (t) {
+                function e(e, r, n, i) {
+                    var s,
+                        u = t.call(this) || this;
+                    u._parentSubscriber = e;
+                    var c = u;
+                    return (
+                        o(r)
+                            ? (s = r)
+                            : r &&
+                              ((s = r.next),
+                              (n = r.error),
+                              (i = r.complete),
+                              r !== a &&
+                                  (o((c = Object.create(r)).unsubscribe) &&
+                                      u.add(c.unsubscribe.bind(c)),
+                                  (c.unsubscribe = u.unsubscribe.bind(u)))),
+                        (u._context = c),
+                        (u._next = s),
+                        (u._error = n),
+                        (u._complete = i),
+                        u
+                    );
+                }
+                return (
+                    i(e, t),
+                    (e.prototype.next = function (t) {
+                        if (!this.isStopped && this._next) {
+                            var e = this._parentSubscriber;
+                            u.useDeprecatedSynchronousErrorHandling &&
+                            e.syncErrorThrowable
+                                ? this.__tryOrSetError(e, this._next, t) &&
+                                  this.unsubscribe()
+                                : this.__tryOrUnsub(this._next, t);
+                        }
+                    }),
+                    (e.prototype.error = function (t) {
+                        if (!this.isStopped) {
+                            var e = this._parentSubscriber,
+                                r = u.useDeprecatedSynchronousErrorHandling;
+                            if (this._error)
+                                r && e.syncErrorThrowable
+                                    ? (this.__tryOrSetError(e, this._error, t),
+                                      this.unsubscribe())
+                                    : (this.__tryOrUnsub(this._error, t),
+                                      this.unsubscribe());
+                            else if (e.syncErrorThrowable)
+                                r
+                                    ? ((e.syncErrorValue = t),
+                                      (e.syncErrorThrown = !0))
+                                    : c(t),
+                                    this.unsubscribe();
+                            else {
+                                if ((this.unsubscribe(), r)) throw t;
+                                c(t);
+                            }
+                        }
+                    }),
+                    (e.prototype.complete = function () {
+                        var t = this;
+                        if (!this.isStopped) {
+                            var e = this._parentSubscriber;
+                            if (this._complete) {
+                                var r = function () {
+                                    return t._complete.call(t._context);
+                                };
+                                u.useDeprecatedSynchronousErrorHandling &&
+                                e.syncErrorThrowable
+                                    ? (this.__tryOrSetError(e, r),
+                                      this.unsubscribe())
+                                    : (this.__tryOrUnsub(r),
+                                      this.unsubscribe());
+                            } else this.unsubscribe();
+                        }
+                    }),
+                    (e.prototype.__tryOrUnsub = function (t, e) {
+                        try {
+                            t.call(this._context, e);
+                        } catch (t) {
+                            if (
+                                (this.unsubscribe(),
+                                u.useDeprecatedSynchronousErrorHandling)
+                            )
+                                throw t;
+                            c(t);
+                        }
+                    }),
+                    (e.prototype.__tryOrSetError = function (t, e, r) {
+                        if (!u.useDeprecatedSynchronousErrorHandling)
+                            throw new Error('bad call');
+                        try {
+                            e.call(this._context, r);
+                        } catch (e) {
+                            return u.useDeprecatedSynchronousErrorHandling
+                                ? ((t.syncErrorValue = e),
+                                  (t.syncErrorThrown = !0),
+                                  !0)
+                                : (c(e), !0);
+                        }
+                        return !1;
+                    }),
+                    (e.prototype._unsubscribe = function () {
+                        var t = this._parentSubscriber;
+                        (this._context = null),
+                            (this._parentSubscriber = null),
+                            t.unsubscribe();
+                    }),
+                    e
+                );
+            })(y);
+        var w = (function () {
+            return (
+                ('function' == typeof Symbol && Symbol.observable) ||
+                '@@observable'
+            );
+        })();
+        function m(t) {
+            return t;
+        }
+        function _(t) {
+            return 0 === t.length
+                ? m
+                : 1 === t.length
+                ? t[0]
+                : function (e) {
+                      return t.reduce(function (t, e) {
+                          return e(t);
+                      }, e);
+                  };
+        }
+        var x = (function () {
+            function t(t) {
+                (this._isScalar = !1), t && (this._subscribe = t);
+            }
+            return (
+                (t.prototype.lift = function (e) {
+                    var r = new t();
+                    return (r.source = this), (r.operator = e), r;
+                }),
+                (t.prototype.subscribe = function (t, e, r) {
+                    var n = this.operator,
+                        i = (function (t, e, r) {
+                            if (t) {
+                                if (t instanceof y) return t;
+                                if (t[b]) return t[b]();
+                            }
+                            return t || e || r ? new y(t, e, r) : new y(a);
+                        })(t, e, r);
+                    if (
+                        (n
+                            ? i.add(n.call(i, this.source))
+                            : i.add(
+                                  this.source ||
+                                      (u.useDeprecatedSynchronousErrorHandling &&
+                                          !i.syncErrorThrowable)
+                                      ? this._subscribe(i)
+                                      : this._trySubscribe(i),
+                              ),
+                        u.useDeprecatedSynchronousErrorHandling &&
+                            i.syncErrorThrowable &&
+                            ((i.syncErrorThrowable = !1), i.syncErrorThrown))
+                    )
+                        throw i.syncErrorValue;
+                    return i;
+                }),
+                (t.prototype._trySubscribe = function (t) {
+                    try {
+                        return this._subscribe(t);
+                    } catch (e) {
+                        u.useDeprecatedSynchronousErrorHandling &&
+                            ((t.syncErrorThrown = !0), (t.syncErrorValue = e)),
+                            !(function (t) {
+                                for (; t; ) {
+                                    var e = t,
+                                        r = e.closed,
+                                        n = e.destination,
+                                        i = e.isStopped;
+                                    if (r || i) return !1;
+                                    t = n && n instanceof y ? n : null;
+                                }
+                                return !0;
+                            })(t)
+                                ? console.warn(e)
+                                : t.error(e);
+                    }
+                }),
+                (t.prototype.forEach = function (t, e) {
+                    var r = this;
+                    return new (e = g(e))(function (e, n) {
+                        var i;
+                        i = r.subscribe(
+                            function (e) {
+                                try {
+                                    t(e);
+                                } catch (t) {
+                                    n(t), i && i.unsubscribe();
+                                }
+                            },
+                            n,
+                            e,
+                        );
+                    });
+                }),
+                (t.prototype._subscribe = function (t) {
+                    var e = this.source;
+                    return e && e.subscribe(t);
+                }),
+                (t.prototype[w] = function () {
+                    return this;
+                }),
+                (t.prototype.pipe = function () {
+                    for (var t = [], e = 0; e < arguments.length; e++)
+                        t[e] = arguments[e];
+                    return 0 === t.length ? this : _(t)(this);
+                }),
+                (t.prototype.toPromise = function (t) {
+                    var e = this;
+                    return new (t = g(t))(function (t, r) {
+                        var n;
+                        e.subscribe(
+                            function (t) {
+                                return (n = t);
+                            },
+                            function (t) {
+                                return r(t);
+                            },
+                            function () {
+                                return t(n);
+                            },
+                        );
+                    });
+                }),
+                (t.create = function (e) {
+                    return new t(e);
+                }),
+                t
+            );
+        })();
+        function g(t) {
+            if ((t || (t = u.Promise || Promise), !t))
+                throw new Error('no Promise impl found');
+            return t;
+        }
+        function S() {
+            return 'function' == typeof Symbol && Symbol.iterator
+                ? Symbol.iterator
+                : '@@iterator';
+        }
+        var E = S(),
+            T = function (t) {
+                return (
+                    t && 'number' == typeof t.length && 'function' != typeof t
+                );
+            };
+        function O(t) {
+            return (
+                !!t &&
+                'function' != typeof t.subscribe &&
+                'function' == typeof t.then
+            );
+        }
+        var j = function (t) {
+            if (t && 'function' == typeof t[w])
+                return (
+                    (i = t),
+                    function (t) {
+                        var e = i[w]();
+                        if ('function' != typeof e.subscribe)
+                            throw new TypeError(
+                                'Provided object does not correctly implement Symbol.observable',
+                            );
+                        return e.subscribe(t);
+                    }
+                );
+            if (T(t))
+                return (
+                    (n = t),
+                    function (t) {
+                        for (var e = 0, r = n.length; e < r && !t.closed; e++)
+                            t.next(n[e]);
+                        t.complete();
+                    }
+                );
+            if (O(t))
+                return (
+                    (r = t),
+                    function (t) {
+                        return (
+                            r
+                                .then(
+                                    function (e) {
+                                        t.closed || (t.next(e), t.complete());
+                                    },
+                                    function (e) {
+                                        return t.error(e);
+                                    },
+                                )
+                                .then(null, c),
+                            t
+                        );
+                    }
+                );
+            if (t && 'function' == typeof t[E])
+                return (
+                    (e = t),
+                    function (t) {
+                        for (var r = e[E](); ; ) {
+                            var n = r.next();
+                            if (n.done) {
+                                t.complete();
+                                break;
+                            }
+                            if ((t.next(n.value), t.closed)) break;
+                        }
+                        return (
+                            'function' == typeof r.return &&
+                                t.add(function () {
+                                    r.return && r.return();
+                                }),
+                            t
+                        );
+                    }
+                );
+            var e,
+                r,
+                n,
+                i,
+                o = p(t) ? 'an invalid object' : "'" + t + "'";
+            throw new TypeError(
+                'You provided ' +
+                    o +
+                    ' where a stream was expected. You can provide an Observable, Promise, Array, or Iterable.',
+            );
+        };
+        function P(t, e) {
+            if (null != t) {
+                if (
+                    (function (t) {
+                        return t && 'function' == typeof t[w];
+                    })(t)
+                )
+                    return (function (t, e) {
+                        return new x(function (r) {
+                            var n = new l();
+                            return (
+                                n.add(
+                                    e.schedule(function () {
+                                        var i = t[w]();
+                                        n.add(
+                                            i.subscribe({
+                                                next: function (t) {
+                                                    n.add(
+                                                        e.schedule(function () {
+                                                            return r.next(t);
+                                                        }),
+                                                    );
+                                                },
+                                                error: function (t) {
+                                                    n.add(
+                                                        e.schedule(function () {
+                                                            return r.error(t);
+                                                        }),
+                                                    );
+                                                },
+                                                complete: function () {
+                                                    n.add(
+                                                        e.schedule(function () {
+                                                            return r.complete();
+                                                        }),
+                                                    );
+                                                },
+                                            }),
+                                        );
+                                    }),
+                                ),
+                                n
+                            );
+                        });
+                    })(t, e);
+                if (O(t))
+                    return (function (t, e) {
+                        return new x(function (r) {
+                            var n = new l();
+                            return (
+                                n.add(
+                                    e.schedule(function () {
+                                        return t.then(
+                                            function (t) {
+                                                n.add(
+                                                    e.schedule(function () {
+                                                        r.next(t),
+                                                            n.add(
+                                                                e.schedule(
+                                                                    function () {
+                                                                        return r.complete();
+                                                                    },
+                                                                ),
+                                                            );
+                                                    }),
+                                                );
+                                            },
+                                            function (t) {
+                                                n.add(
+                                                    e.schedule(function () {
+                                                        return r.error(t);
+                                                    }),
+                                                );
+                                            },
+                                        );
+                                    }),
+                                ),
+                                n
+                            );
+                        });
+                    })(t, e);
+                if (T(t))
+                    return (function (t, e) {
+                        return new x(function (r) {
+                            var n = new l(),
+                                i = 0;
+                            return (
+                                n.add(
+                                    e.schedule(function () {
+                                        i !== t.length
+                                            ? (r.next(t[i++]),
+                                              r.closed ||
+                                                  n.add(this.schedule()))
+                                            : r.complete();
+                                    }),
+                                ),
+                                n
+                            );
+                        });
+                    })(t, e);
+                if (
+                    (function (t) {
+                        return t && 'function' == typeof t[E];
+                    })(t) ||
+                    'string' == typeof t
+                )
+                    return (function (t, e) {
+                        if (!t) throw new Error('Iterable cannot be null');
+                        return new x(function (r) {
+                            var n,
+                                i = new l();
+                            return (
+                                i.add(function () {
+                                    n &&
+                                        'function' == typeof n.return &&
+                                        n.return();
+                                }),
+                                i.add(
+                                    e.schedule(function () {
+                                        (n = t[E]()),
+                                            i.add(
+                                                e.schedule(function () {
+                                                    if (!r.closed) {
+                                                        var t, e;
+                                                        try {
+                                                            var i = n.next();
+                                                            (t = i.value),
+                                                                (e = i.done);
+                                                        } catch (t) {
+                                                            return void r.error(
+                                                                t,
+                                                            );
+                                                        }
+                                                        e
+                                                            ? r.complete()
+                                                            : (r.next(t),
+                                                              this.schedule());
+                                                    }
+                                                }),
+                                            );
+                                    }),
+                                ),
+                                i
+                            );
+                        });
+                    })(t, e);
+            }
+            throw new TypeError(
+                ((null !== t && typeof t) || t) + ' is not observable',
+            );
+        }
+        function H(t, e) {
+            return e ? P(t, e) : t instanceof x ? t : new x(j(t));
+        }
+        function I(t, e) {
+            return function (r) {
+                if ('function' != typeof t)
+                    throw new TypeError(
+                        'argument is not a function. Are you looking for `mapTo()`?',
+                    );
+                return r.lift(new q(t, e));
+            };
+        }
+        var q = (function () {
+                function t(t, e) {
+                    (this.project = t), (this.thisArg = e);
+                }
+                return (
+                    (t.prototype.call = function (t, e) {
+                        return e.subscribe(
+                            new A(t, this.project, this.thisArg),
+                        );
+                    }),
+                    t
+                );
+            })(),
+            A = (function (t) {
+                function e(e, r, n) {
+                    var i = t.call(this, e) || this;
+                    return (
+                        (i.project = r), (i.count = 0), (i.thisArg = n || i), i
+                    );
+                }
+                return (
+                    i(e, t),
+                    (e.prototype._next = function (t) {
+                        var e;
+                        try {
+                            e = this.project.call(
+                                this.thisArg,
+                                t,
+                                this.count++,
+                            );
+                        } catch (t) {
+                            return void this.destination.error(t);
+                        }
+                        this.destination.next(e);
+                    }),
+                    e
+                );
+            })(y);
+        var D = r(0);
+        function N(t, e) {
+            return (
+                void 0 === e && (e = null),
+                new V({ method: 'GET', url: t, headers: e })
+            );
+        }
+        function C(t, e, r) {
+            return new V({ method: 'POST', url: t, body: e, headers: r });
+        }
+        function k(t, e) {
+            return new V({ method: 'DELETE', url: t, headers: e });
+        }
+        function L(t, e, r) {
+            return new V({ method: 'PUT', url: t, body: e, headers: r });
+        }
+        function M(t, e, r) {
+            return new V({ method: 'PATCH', url: t, body: e, headers: r });
+        }
+        var R = I(function (t, e) {
+            return t.response;
+        });
+        function X(t, e) {
+            return R(
+                new V({
+                    method: 'GET',
+                    url: t,
+                    responseType: 'json',
+                    headers: e,
+                }),
+            );
+        }
+        var V = (function (t) {
+                function e(e) {
+                    var r = t.call(this) || this,
+                        n = {
+                            async: !0,
+                            createXHR: function () {
+                                return this.crossDomain
+                                    ? (function () {
+                                          if (D.a.XMLHttpRequest)
+                                              return new D.a.XMLHttpRequest();
+                                          if (D.a.XDomainRequest)
+                                              return new D.a.XDomainRequest();
+                                          throw new Error(
+                                              'CORS is not supported by your browser',
+                                          );
+                                      })()
+                                    : (function () {
+                                          if (D.a.XMLHttpRequest)
+                                              return new D.a.XMLHttpRequest();
+                                          var t = void 0;
+                                          try {
+                                              for (
+                                                  var e = [
+                                                          'Msxml2.XMLHTTP',
+                                                          'Microsoft.XMLHTTP',
+                                                          'Msxml2.XMLHTTP.4.0',
+                                                      ],
+                                                      r = 0;
+                                                  r < 3;
+                                                  r++
+                                              )
+                                                  try {
+                                                      if (
+                                                          ((t = e[r]),
+                                                          new D.a.ActiveXObject(
+                                                              t,
+                                                          ))
+                                                      )
+                                                          break;
+                                                  } catch (t) {}
+                                              return new D.a.ActiveXObject(t);
+                                          } catch (t) {
+                                              throw new Error(
+                                                  'XMLHttpRequest is not supported by your browser',
+                                              );
+                                          }
+                                      })();
+                            },
+                            crossDomain: !0,
+                            withCredentials: !1,
+                            headers: {},
+                            method: 'GET',
+                            responseType: 'json',
+                            timeout: 0,
+                        };
+                    if ('string' == typeof e) n.url = e;
+                    else for (var i in e) e.hasOwnProperty(i) && (n[i] = e[i]);
+                    return (r.request = n), r;
+                }
+                var r;
+                return (
+                    i(e, t),
+                    (e.prototype._subscribe = function (t) {
+                        return new F(t, this.request);
+                    }),
+                    (e.create =
+                        (((r = function (t) {
+                            return new e(t);
+                        }).get = N),
+                        (r.post = C),
+                        (r.delete = k),
+                        (r.put = L),
+                        (r.patch = M),
+                        (r.getJSON = X),
+                        r)),
+                    e
+                );
+            })(x),
+            F = (function (t) {
+                function e(e, r) {
+                    var n = t.call(this, e) || this;
+                    (n.request = r), (n.done = !1);
+                    var i = (r.headers = r.headers || {});
+                    return (
+                        r.crossDomain ||
+                            n.getHeader(i, 'X-Requested-With') ||
+                            (i['X-Requested-With'] = 'XMLHttpRequest'),
+                        n.getHeader(i, 'Content-Type') ||
+                            (D.a.FormData && r.body instanceof D.a.FormData) ||
+                            void 0 === r.body ||
+                            (i['Content-Type'] =
+                                'application/x-www-form-urlencoded; charset=UTF-8'),
+                        (r.body = n.serializeBody(
+                            r.body,
+                            n.getHeader(r.headers, 'Content-Type'),
+                        )),
+                        n.send(),
+                        n
+                    );
+                }
+                return (
+                    i(e, t),
+                    (e.prototype.next = function (t) {
+                        this.done = !0;
+                        var e,
+                            r = this.xhr,
+                            n = this.request,
+                            i = this.destination;
+                        try {
+                            e = new U(t, r, n);
+                        } catch (t) {
+                            return i.error(t);
+                        }
+                        i.next(e);
+                    }),
+                    (e.prototype.send = function () {
+                        var t = this.request,
+                            e = this.request,
+                            r = e.user,
+                            n = e.method,
+                            i = e.url,
+                            o = e.async,
+                            s = e.password,
+                            u = e.headers,
+                            c = e.body;
+                        try {
+                            var a = (this.xhr = t.createXHR());
+                            this.setupEvents(a, t),
+                                r ? a.open(n, i, o, r, s) : a.open(n, i, o),
+                                o &&
+                                    ((a.timeout = t.timeout),
+                                    (a.responseType = t.responseType)),
+                                'withCredentials' in a &&
+                                    (a.withCredentials = !!t.withCredentials),
+                                this.setHeaders(a, u),
+                                c ? a.send(c) : a.send();
+                        } catch (t) {
+                            this.error(t);
+                        }
+                    }),
+                    (e.prototype.serializeBody = function (t, e) {
+                        if (!t || 'string' == typeof t) return t;
+                        if (D.a.FormData && t instanceof D.a.FormData) return t;
+                        if (e) {
+                            var r = e.indexOf(';');
+                            -1 !== r && (e = e.substring(0, r));
+                        }
+                        switch (e) {
+                            case 'application/x-www-form-urlencoded':
+                                return Object.keys(t)
+                                    .map(function (e) {
+                                        return (
+                                            encodeURIComponent(e) +
+                                            '=' +
+                                            encodeURIComponent(t[e])
+                                        );
+                                    })
+                                    .join('&');
+                            case 'application/json':
+                                return JSON.stringify(t);
+                            default:
+                                return t;
+                        }
+                    }),
+                    (e.prototype.setHeaders = function (t, e) {
+                        for (var r in e)
+                            e.hasOwnProperty(r) && t.setRequestHeader(r, e[r]);
+                    }),
+                    (e.prototype.getHeader = function (t, e) {
+                        for (var r in t)
+                            if (r.toLowerCase() === e.toLowerCase())
+                                return t[r];
+                    }),
+                    (e.prototype.setupEvents = function (t, e) {
+                        var r = e.progressSubscriber;
+                        function n(t) {
+                            var e,
+                                r = n,
+                                i = r.subscriber,
+                                o = r.progressSubscriber,
+                                s = r.request;
+                            o && o.error(t);
+                            try {
+                                e = new B(this, s);
+                            } catch (t) {
+                                e = t;
+                            }
+                            i.error(e);
+                        }
+                        if (
+                            ((t.ontimeout = n),
+                            (n.request = e),
+                            (n.subscriber = this),
+                            (n.progressSubscriber = r),
+                            t.upload && 'withCredentials' in t)
+                        ) {
+                            var i, o;
+                            if (r)
+                                (i = function (t) {
+                                    i.progressSubscriber.next(t);
+                                }),
+                                    D.a.XDomainRequest
+                                        ? (t.onprogress = i)
+                                        : (t.upload.onprogress = i),
+                                    (i.progressSubscriber = r);
+                            (o = function (t) {
+                                var e,
+                                    r = o,
+                                    n = r.progressSubscriber,
+                                    i = r.subscriber,
+                                    s = r.request;
+                                n && n.error(t);
+                                try {
+                                    e = new Y('ajax error', this, s);
+                                } catch (t) {
+                                    e = t;
+                                }
+                                i.error(e);
+                            }),
+                                (t.onerror = o),
+                                (o.request = e),
+                                (o.subscriber = this),
+                                (o.progressSubscriber = r);
+                        }
+                        function s(t) {}
+                        function u(t) {
+                            var e = u,
+                                r = e.subscriber,
+                                n = e.progressSubscriber,
+                                i = e.request;
+                            if (4 === this.readyState) {
+                                var o =
+                                        1223 === this.status
+                                            ? 204
+                                            : this.status,
+                                    s =
+                                        'text' === this.responseType
+                                            ? this.response || this.responseText
+                                            : this.response;
+                                if ((0 === o && (o = s ? 200 : 0), o < 400))
+                                    n && n.complete(), r.next(t), r.complete();
+                                else {
+                                    n && n.error(t);
+                                    var c = void 0;
+                                    try {
+                                        c = new Y('ajax error ' + o, this, i);
+                                    } catch (t) {
+                                        c = t;
+                                    }
+                                    r.error(c);
+                                }
+                            }
+                        }
+                        (t.onreadystatechange = s),
+                            (s.subscriber = this),
+                            (s.progressSubscriber = r),
+                            (s.request = e),
+                            (t.onload = u),
+                            (u.subscriber = this),
+                            (u.progressSubscriber = r),
+                            (u.request = e);
+                    }),
+                    (e.prototype.unsubscribe = function () {
+                        var e = this.done,
+                            r = this.xhr;
+                        !e &&
+                            r &&
+                            4 !== r.readyState &&
+                            'function' == typeof r.abort &&
+                            r.abort(),
+                            t.prototype.unsubscribe.call(this);
+                    }),
+                    e
+                );
+            })(y),
+            U = (function () {
+                return function (t, e, r) {
+                    (this.originalEvent = t),
+                        (this.xhr = e),
+                        (this.request = r),
+                        (this.status = e.status),
+                        (this.responseType = e.responseType || r.responseType),
+                        (this.response = G(this.responseType, e));
+                };
+            })(),
+            Y = (function () {
+                function t(t, e, r) {
+                    return (
+                        Error.call(this),
+                        (this.message = t),
+                        (this.name = 'AjaxError'),
+                        (this.xhr = e),
+                        (this.request = r),
+                        (this.status = e.status),
+                        (this.responseType = e.responseType || r.responseType),
+                        (this.response = G(this.responseType, e)),
+                        this
+                    );
+                }
+                return (t.prototype = Object.create(Error.prototype)), t;
+            })();
+        function G(t, e) {
+            switch (t) {
+                case 'json':
+                    return (function (t) {
+                        return 'response' in t
+                            ? t.responseType
+                                ? t.response
+                                : JSON.parse(
+                                      t.response || t.responseText || 'null',
+                                  )
+                            : JSON.parse(t.responseText || 'null');
+                    })(e);
+                case 'xml':
+                    return e.responseXML;
+                case 'text':
+                default:
+                    return 'response' in e ? e.response : e.responseText;
+            }
+        }
+        var B = function (t, e) {
+                return (
+                    Y.call(this, 'ajax timeout', t, e),
+                    (this.name = 'AjaxTimeoutError'),
+                    this
+                );
+            },
+            J = (function () {
+                return V.create;
+            })(),
+            W = (function (t) {
+                function e(e, r, n) {
+                    var i = t.call(this) || this;
+                    return (
+                        (i.parent = e),
+                        (i.outerValue = r),
+                        (i.outerIndex = n),
+                        (i.index = 0),
+                        i
+                    );
+                }
+                return (
+                    i(e, t),
+                    (e.prototype._next = function (t) {
+                        this.parent.notifyNext(
+                            this.outerValue,
+                            t,
+                            this.outerIndex,
+                            this.index++,
+                            this,
+                        );
+                    }),
+                    (e.prototype._error = function (t) {
+                        this.parent.notifyError(t, this), this.unsubscribe();
+                    }),
+                    (e.prototype._complete = function () {
+                        this.parent.notifyComplete(this), this.unsubscribe();
+                    }),
+                    e
+                );
+            })(y);
+        function z(t, e, r, n, i) {
+            if ((void 0 === i && (i = new W(t, r, n)), !i.closed))
+                return e instanceof x ? e.subscribe(i) : j(e)(i);
+        }
+        var K = (function (t) {
+            function e() {
+                return (null !== t && t.apply(this, arguments)) || this;
+            }
+            return (
+                i(e, t),
+                (e.prototype.notifyNext = function (t, e, r, n, i) {
+                    this.destination.next(e);
+                }),
+                (e.prototype.notifyError = function (t, e) {
+                    this.destination.error(t);
+                }),
+                (e.prototype.notifyComplete = function (t) {
+                    this.destination.complete();
+                }),
                 e
-              );
-            });
-          })(n, r);
-        if (T(n))
-          return (function (n, r) {
-            return new _(function (t) {
-              var e = new d();
-              return (
-                e.add(
-                  r.schedule(function () {
-                    return n.then(
-                      function (n) {
-                        e.add(
-                          r.schedule(function () {
-                            t.next(n),
-                              e.add(
-                                r.schedule(function () {
-                                  return t.complete();
-                                })
+            );
+        })(y);
+        var $ = (function () {
+                function t(t, e) {
+                    void 0 === e && (e = Number.POSITIVE_INFINITY),
+                        (this.project = t),
+                        (this.concurrent = e);
+                }
+                return (
+                    (t.prototype.call = function (t, e) {
+                        return e.subscribe(
+                            new Q(t, this.project, this.concurrent),
+                        );
+                    }),
+                    t
+                );
+            })(),
+            Q = (function (t) {
+                function e(e, r, n) {
+                    void 0 === n && (n = Number.POSITIVE_INFINITY);
+                    var i = t.call(this, e) || this;
+                    return (
+                        (i.project = r),
+                        (i.concurrent = n),
+                        (i.hasCompleted = !1),
+                        (i.buffer = []),
+                        (i.active = 0),
+                        (i.index = 0),
+                        i
+                    );
+                }
+                return (
+                    i(e, t),
+                    (e.prototype._next = function (t) {
+                        this.active < this.concurrent
+                            ? this._tryNext(t)
+                            : this.buffer.push(t);
+                    }),
+                    (e.prototype._tryNext = function (t) {
+                        var e,
+                            r = this.index++;
+                        try {
+                            e = this.project(t, r);
+                        } catch (t) {
+                            return void this.destination.error(t);
+                        }
+                        this.active++, this._innerSub(e, t, r);
+                    }),
+                    (e.prototype._innerSub = function (t, e, r) {
+                        var n = new W(this, e, r),
+                            i = this.destination;
+                        i.add(n);
+                        var o = z(this, t, void 0, void 0, n);
+                        o !== n && i.add(o);
+                    }),
+                    (e.prototype._complete = function () {
+                        (this.hasCompleted = !0),
+                            0 === this.active &&
+                                0 === this.buffer.length &&
+                                this.destination.complete(),
+                            this.unsubscribe();
+                    }),
+                    (e.prototype.notifyNext = function (t, e, r, n, i) {
+                        this.destination.next(e);
+                    }),
+                    (e.prototype.notifyComplete = function (t) {
+                        var e = this.buffer;
+                        this.remove(t),
+                            this.active--,
+                            e.length > 0
+                                ? this._next(e.shift())
+                                : 0 === this.active &&
+                                  this.hasCompleted &&
+                                  this.destination.complete();
+                    }),
+                    e
+                );
+            })(K);
+        function Z(t, e) {
+            return function (r) {
+                for (var n = r, i = 0; i < e; i++) {
+                    var o = n[t[i]];
+                    if (void 0 === o) return;
+                    n = o;
+                }
+                return n;
+            };
+        }
+        function tt(t) {
+            return function (e) {
+                var r = new et(t),
+                    n = e.lift(r);
+                return (r.caught = n);
+            };
+        }
+        var et = (function () {
+                function t(t) {
+                    this.selector = t;
+                }
+                return (
+                    (t.prototype.call = function (t, e) {
+                        return e.subscribe(
+                            new rt(t, this.selector, this.caught),
+                        );
+                    }),
+                    t
+                );
+            })(),
+            rt = (function (t) {
+                function e(e, r, n) {
+                    var i = t.call(this, e) || this;
+                    return (i.selector = r), (i.caught = n), i;
+                }
+                return (
+                    i(e, t),
+                    (e.prototype.error = function (e) {
+                        if (!this.isStopped) {
+                            var r = void 0;
+                            try {
+                                r = this.selector(e, this.caught);
+                            } catch (e) {
+                                return void t.prototype.error.call(this, e);
+                            }
+                            this._unsubscribeAndRecycle();
+                            var n = new W(this, void 0, void 0);
+                            this.add(n);
+                            var i = z(this, r, void 0, void 0, n);
+                            i !== n && this.add(i);
+                        }
+                    }),
+                    e
+                );
+            })(K),
+            nt = (function (t) {
+                function e(e, r) {
+                    var n = t.call(this, e, r) || this;
+                    return (n.scheduler = e), (n.work = r), (n.pending = !1), n;
+                }
+                return (
+                    i(e, t),
+                    (e.prototype.schedule = function (t, e) {
+                        if ((void 0 === e && (e = 0), this.closed)) return this;
+                        this.state = t;
+                        var r = this.id,
+                            n = this.scheduler;
+                        return (
+                            null != r &&
+                                (this.id = this.recycleAsyncId(n, r, e)),
+                            (this.pending = !0),
+                            (this.delay = e),
+                            (this.id =
+                                this.id || this.requestAsyncId(n, this.id, e)),
+                            this
+                        );
+                    }),
+                    (e.prototype.requestAsyncId = function (t, e, r) {
+                        return (
+                            void 0 === r && (r = 0),
+                            setInterval(t.flush.bind(t, this), r)
+                        );
+                    }),
+                    (e.prototype.recycleAsyncId = function (t, e, r) {
+                        if (
+                            (void 0 === r && (r = 0),
+                            null !== r &&
+                                this.delay === r &&
+                                !1 === this.pending)
+                        )
+                            return e;
+                        clearInterval(e);
+                    }),
+                    (e.prototype.execute = function (t, e) {
+                        if (this.closed)
+                            return new Error('executing a cancelled action');
+                        this.pending = !1;
+                        var r = this._execute(t, e);
+                        if (r) return r;
+                        !1 === this.pending &&
+                            null != this.id &&
+                            (this.id = this.recycleAsyncId(
+                                this.scheduler,
+                                this.id,
+                                null,
+                            ));
+                    }),
+                    (e.prototype._execute = function (t, e) {
+                        var r = !1,
+                            n = void 0;
+                        try {
+                            this.work(t);
+                        } catch (t) {
+                            (r = !0), (n = (!!t && t) || new Error(t));
+                        }
+                        if (r) return this.unsubscribe(), n;
+                    }),
+                    (e.prototype._unsubscribe = function () {
+                        var t = this.id,
+                            e = this.scheduler,
+                            r = e.actions,
+                            n = r.indexOf(this);
+                        (this.work = null),
+                            (this.state = null),
+                            (this.pending = !1),
+                            (this.scheduler = null),
+                            -1 !== n && r.splice(n, 1),
+                            null != t &&
+                                (this.id = this.recycleAsyncId(e, t, null)),
+                            (this.delay = null);
+                    }),
+                    e
+                );
+            })(
+                (function (t) {
+                    function e(e, r) {
+                        return t.call(this) || this;
+                    }
+                    return (
+                        i(e, t),
+                        (e.prototype.schedule = function (t, e) {
+                            return void 0 === e && (e = 0), this;
+                        }),
+                        e
+                    );
+                })(l),
+            ),
+            it = (function () {
+                function t(e, r) {
+                    void 0 === r && (r = t.now),
+                        (this.SchedulerAction = e),
+                        (this.now = r);
+                }
+                return (
+                    (t.prototype.schedule = function (t, e, r) {
+                        return (
+                            void 0 === e && (e = 0),
+                            new this.SchedulerAction(this, t).schedule(r, e)
+                        );
+                    }),
+                    (t.now = function () {
+                        return Date.now();
+                    }),
+                    t
+                );
+            })(),
+            ot = new ((function (t) {
+                function e(r, n) {
+                    void 0 === n && (n = it.now);
+                    var i =
+                        t.call(this, r, function () {
+                            return e.delegate && e.delegate !== i
+                                ? e.delegate.now()
+                                : n();
+                        }) || this;
+                    return (
+                        (i.actions = []),
+                        (i.active = !1),
+                        (i.scheduled = void 0),
+                        i
+                    );
+                }
+                return (
+                    i(e, t),
+                    (e.prototype.schedule = function (r, n, i) {
+                        return (
+                            void 0 === n && (n = 0),
+                            e.delegate && e.delegate !== this
+                                ? e.delegate.schedule(r, n, i)
+                                : t.prototype.schedule.call(this, r, n, i)
+                        );
+                    }),
+                    (e.prototype.flush = function (t) {
+                        var e = this.actions;
+                        if (this.active) e.push(t);
+                        else {
+                            var r;
+                            this.active = !0;
+                            do {
+                                if ((r = t.execute(t.state, t.delay))) break;
+                            } while ((t = e.shift()));
+                            if (((this.active = !1), r)) {
+                                for (; (t = e.shift()); ) t.unsubscribe();
+                                throw r;
+                            }
+                        }
+                    }),
+                    e
+                );
+            })(it))(nt);
+        var st = (function () {
+                function t(t, e) {
+                    (this.dueTime = t), (this.scheduler = e);
+                }
+                return (
+                    (t.prototype.call = function (t, e) {
+                        return e.subscribe(
+                            new ut(t, this.dueTime, this.scheduler),
+                        );
+                    }),
+                    t
+                );
+            })(),
+            ut = (function (t) {
+                function e(e, r, n) {
+                    var i = t.call(this, e) || this;
+                    return (
+                        (i.dueTime = r),
+                        (i.scheduler = n),
+                        (i.debouncedSubscription = null),
+                        (i.lastValue = null),
+                        (i.hasValue = !1),
+                        i
+                    );
+                }
+                return (
+                    i(e, t),
+                    (e.prototype._next = function (t) {
+                        this.clearDebounce(),
+                            (this.lastValue = t),
+                            (this.hasValue = !0),
+                            this.add(
+                                (this.debouncedSubscription = this.scheduler.schedule(
+                                    ct,
+                                    this.dueTime,
+                                    this,
+                                )),
+                            );
+                    }),
+                    (e.prototype._complete = function () {
+                        this.debouncedNext(), this.destination.complete();
+                    }),
+                    (e.prototype.debouncedNext = function () {
+                        if ((this.clearDebounce(), this.hasValue)) {
+                            var t = this.lastValue;
+                            (this.lastValue = null),
+                                (this.hasValue = !1),
+                                this.destination.next(t);
+                        }
+                    }),
+                    (e.prototype.clearDebounce = function () {
+                        var t = this.debouncedSubscription;
+                        null !== t &&
+                            (this.remove(t),
+                            t.unsubscribe(),
+                            (this.debouncedSubscription = null));
+                    }),
+                    e
+                );
+            })(y);
+        function ct(t) {
+            t.debouncedNext();
+        }
+        function at() {}
+        function ht(t, e, r) {
+            return function (n) {
+                return n.lift(new pt(t, e, r));
+            };
+        }
+        var pt = (function () {
+                function t(t, e, r) {
+                    (this.nextOrObserver = t),
+                        (this.error = e),
+                        (this.complete = r);
+                }
+                return (
+                    (t.prototype.call = function (t, e) {
+                        return e.subscribe(
+                            new ft(
+                                t,
+                                this.nextOrObserver,
+                                this.error,
+                                this.complete,
+                            ),
+                        );
+                    }),
+                    t
+                );
+            })(),
+            ft = (function (t) {
+                function e(e, r, n, i) {
+                    var s = t.call(this, e) || this;
+                    return (
+                        (s._tapNext = at),
+                        (s._tapError = at),
+                        (s._tapComplete = at),
+                        (s._tapError = n || at),
+                        (s._tapComplete = i || at),
+                        o(r)
+                            ? ((s._context = s), (s._tapNext = r))
+                            : r &&
+                              ((s._context = r),
+                              (s._tapNext = r.next || at),
+                              (s._tapError = r.error || at),
+                              (s._tapComplete = r.complete || at)),
+                        s
+                    );
+                }
+                return (
+                    i(e, t),
+                    (e.prototype._next = function (t) {
+                        try {
+                            this._tapNext.call(this._context, t);
+                        } catch (t) {
+                            return void this.destination.error(t);
+                        }
+                        this.destination.next(t);
+                    }),
+                    (e.prototype._error = function (t) {
+                        try {
+                            this._tapError.call(this._context, t);
+                        } catch (t) {
+                            return void this.destination.error(t);
+                        }
+                        this.destination.error(t);
+                    }),
+                    (e.prototype._complete = function () {
+                        try {
+                            this._tapComplete.call(this._context);
+                        } catch (t) {
+                            return void this.destination.error(t);
+                        }
+                        return this.destination.complete();
+                    }),
+                    e
+                );
+            })(y);
+        var lt = (function () {
+                function t(t, e) {
+                    (this.predicate = t), (this.thisArg = e);
+                }
+                return (
+                    (t.prototype.call = function (t, e) {
+                        return e.subscribe(
+                            new dt(t, this.predicate, this.thisArg),
+                        );
+                    }),
+                    t
+                );
+            })(),
+            dt = (function (t) {
+                function e(e, r, n) {
+                    var i = t.call(this, e) || this;
+                    return (i.predicate = r), (i.thisArg = n), (i.count = 0), i;
+                }
+                return (
+                    i(e, t),
+                    (e.prototype._next = function (t) {
+                        var e;
+                        try {
+                            e = this.predicate.call(
+                                this.thisArg,
+                                t,
+                                this.count++,
+                            );
+                        } catch (t) {
+                            return void this.destination.error(t);
+                        }
+                        e && this.destination.next(t);
+                    }),
+                    e
+                );
+            })(y);
+        var bt = (function () {
+                function t(t, e) {
+                    (this.compare = t), (this.keySelector = e);
+                }
+                return (
+                    (t.prototype.call = function (t, e) {
+                        return e.subscribe(
+                            new yt(t, this.compare, this.keySelector),
+                        );
+                    }),
+                    t
+                );
+            })(),
+            yt = (function (t) {
+                function e(e, r, n) {
+                    var i = t.call(this, e) || this;
+                    return (
+                        (i.keySelector = n),
+                        (i.hasKey = !1),
+                        'function' == typeof r && (i.compare = r),
+                        i
+                    );
+                }
+                return (
+                    i(e, t),
+                    (e.prototype.compare = function (t, e) {
+                        return t === e;
+                    }),
+                    (e.prototype._next = function (t) {
+                        var e;
+                        try {
+                            var r = this.keySelector;
+                            e = r ? r(t) : t;
+                        } catch (t) {
+                            return this.destination.error(t);
+                        }
+                        var n = !1;
+                        if (this.hasKey)
+                            try {
+                                n = (0, this.compare)(this.key, e);
+                            } catch (t) {
+                                return this.destination.error(t);
+                            }
+                        else this.hasKey = !0;
+                        n || ((this.key = e), this.destination.next(t));
+                    }),
+                    e
+                );
+            })(y);
+        var vt = (function () {
+                function t(t) {
+                    this.project = t;
+                }
+                return (
+                    (t.prototype.call = function (t, e) {
+                        return e.subscribe(new wt(t, this.project));
+                    }),
+                    t
+                );
+            })(),
+            wt = (function (t) {
+                function e(e, r) {
+                    var n = t.call(this, e) || this;
+                    return (n.project = r), (n.index = 0), n;
+                }
+                return (
+                    i(e, t),
+                    (e.prototype._next = function (t) {
+                        var e,
+                            r = this.index++;
+                        try {
+                            e = this.project(t, r);
+                        } catch (t) {
+                            return void this.destination.error(t);
+                        }
+                        this._innerSub(e, t, r);
+                    }),
+                    (e.prototype._innerSub = function (t, e, r) {
+                        var n = this.innerSubscription;
+                        n && n.unsubscribe();
+                        var i = new W(this, e, r),
+                            o = this.destination;
+                        o.add(i),
+                            (this.innerSubscription = z(
+                                this,
+                                t,
+                                void 0,
+                                void 0,
+                                i,
+                            )),
+                            this.innerSubscription !== i &&
+                                o.add(this.innerSubscription);
+                    }),
+                    (e.prototype._complete = function () {
+                        var e = this.innerSubscription;
+                        (e && !e.closed) || t.prototype._complete.call(this),
+                            this.unsubscribe();
+                    }),
+                    (e.prototype._unsubscribe = function () {
+                        this.innerSubscription = null;
+                    }),
+                    (e.prototype.notifyComplete = function (e) {
+                        this.destination.remove(e),
+                            (this.innerSubscription = null),
+                            this.isStopped && t.prototype._complete.call(this);
+                    }),
+                    (e.prototype.notifyNext = function (t, e, r, n, i) {
+                        this.destination.next(e);
+                    }),
+                    e
+                );
+            })(K);
+        const mt = document.getElementById('suggestions'),
+            _t = (function t(e, r, n, i) {
+                return (
+                    o(n) && ((i = n), (n = void 0)),
+                    i
+                        ? t(e, r, n).pipe(
+                              I(function (t) {
+                                  return h(t) ? i.apply(void 0, t) : i(t);
+                              }),
+                          )
+                        : new x(function (t) {
+                              !(function t(e, r, n, i, o) {
+                                  var s;
+                                  if (
+                                      (function (t) {
+                                          return (
+                                              t &&
+                                              'function' ==
+                                                  typeof t.addEventListener &&
+                                              'function' ==
+                                                  typeof t.removeEventListener
+                                          );
+                                      })(e)
+                                  ) {
+                                      var u = e;
+                                      e.addEventListener(r, n, o),
+                                          (s = function () {
+                                              return u.removeEventListener(
+                                                  r,
+                                                  n,
+                                                  o,
+                                              );
+                                          });
+                                  } else if (
+                                      (function (t) {
+                                          return (
+                                              t &&
+                                              'function' == typeof t.on &&
+                                              'function' == typeof t.off
+                                          );
+                                      })(e)
+                                  ) {
+                                      var c = e;
+                                      e.on(r, n),
+                                          (s = function () {
+                                              return c.off(r, n);
+                                          });
+                                  } else if (
+                                      (function (t) {
+                                          return (
+                                              t &&
+                                              'function' ==
+                                                  typeof t.addListener &&
+                                              'function' ==
+                                                  typeof t.removeListener
+                                          );
+                                      })(e)
+                                  ) {
+                                      var a = e;
+                                      e.addListener(r, n),
+                                          (s = function () {
+                                              return a.removeListener(r, n);
+                                          });
+                                  } else {
+                                      if (!e || !e.length)
+                                          throw new TypeError(
+                                              'Invalid event target',
+                                          );
+                                      for (var h = 0, p = e.length; h < p; h++)
+                                          t(e[h], r, n, i, o);
+                                  }
+                                  i.add(s);
+                              })(
+                                  e,
+                                  r,
+                                  function (e) {
+                                      arguments.length > 1
+                                          ? t.next(
+                                                Array.prototype.slice.call(
+                                                    arguments,
+                                                ),
+                                            )
+                                          : t.next(e);
+                                  },
+                                  t,
+                                  n,
                               );
                           })
-                        );
-                      },
-                      function (n) {
-                        e.add(
-                          r.schedule(function () {
-                            return t.error(n);
-                          })
-                        );
-                      }
-                    );
-                  })
-                ),
-                e
-              );
-            });
-          })(n, r);
-        if (O(n))
-          return (function (n, r) {
-            return new _(function (t) {
-              var e = new d(),
-                o = 0;
-              return (
-                e.add(
-                  r.schedule(function () {
-                    o !== n.length
-                      ? (t.next(n[o++]), t.closed || e.add(this.schedule()))
-                      : t.complete();
-                  })
-                ),
-                e
-              );
-            });
-          })(n, r);
-        if (
-          (function (n) {
-            return n && "function" == typeof n[E];
-          })(n) ||
-          "string" == typeof n
-        )
-          return (function (n, r) {
-            if (!n) throw new Error("Iterable cannot be null");
-            return new _(function (t) {
-              var e,
-                o = new d();
-              return (
-                o.add(function () {
-                  e && "function" == typeof e.return && e.return();
+                );
+            })(document.getElementById('search'), 'keyup').pipe(
+                ((Tt = 200),
+                void 0 === Ot && (Ot = ot),
+                function (t) {
+                    return t.lift(new st(Tt, Ot));
                 }),
-                o.add(
-                  r.schedule(function () {
-                    (e = n[E]()),
-                      o.add(
-                        r.schedule(function () {
-                          if (!t.closed) {
-                            var n, r;
-                            try {
-                              var o = e.next();
-                              (n = o.value), (r = o.done);
-                            } catch (n) {
-                              return void t.error(n);
-                            }
-                            r ? t.complete() : (t.next(n), this.schedule());
+                ht(() => {
+                    mt.innerHTML = '<li>Filter for a repository</li>';
+                }),
+                I((t) => t.target.value),
+                ((St = (t) => t),
+                function (t) {
+                    return t.lift(new lt(St, Et));
+                }),
+                function (t) {
+                    return t.lift(new bt(xt, gt));
+                },
+                (function t(e, r) {
+                    return 'function' == typeof r
+                        ? function (n) {
+                              return n.pipe(
+                                  t(function (t, n) {
+                                      return H(e(t, n)).pipe(
+                                          I(function (e, i) {
+                                              return r(t, e, n, i);
+                                          }),
+                                      );
+                                  }),
+                              );
                           }
-                        })
-                      );
-                  })
+                        : function (t) {
+                              return t.lift(new vt(e));
+                          };
+                })((t) =>
+                    J('https://api.github.com/search/repositories?q=' + t).pipe(
+                        I((t) => t.response.items),
+                        (function t(e, r, n) {
+                            return (
+                                void 0 === n && (n = Number.POSITIVE_INFINITY),
+                                'function' == typeof r
+                                    ? function (i) {
+                                          return i.pipe(
+                                              t(function (t, n) {
+                                                  return H(e(t, n)).pipe(
+                                                      I(function (e, i) {
+                                                          return r(t, e, n, i);
+                                                      }),
+                                                  );
+                                              }, n),
+                                          );
+                                      }
+                                    : ('number' == typeof r && (n = r),
+                                      function (t) {
+                                          return t.lift(new $(e, n));
+                                      })
+                            );
+                        })((t = []) =>
+                            H(t).pipe(
+                                (function () {
+                                    for (
+                                        var t = [], e = 0;
+                                        e < arguments.length;
+                                        e++
+                                    )
+                                        t[e] = arguments[e];
+                                    var r = t.length;
+                                    if (0 === r)
+                                        throw new Error(
+                                            'list of properties cannot be empty.',
+                                        );
+                                    return function (e) {
+                                        return I(Z(t, r))(e);
+                                    };
+                                })('name'),
+                            ),
+                        ),
+                        tt(_t),
+                    ),
                 ),
-                o
-              );
-            });
-          })(n, r);
-      }
-      throw new TypeError(
-        ((null !== n && typeof n) || n) + " is not observable"
-      );
-    }
-    ((j = [1, 2, 3, 4, 5]),
-    P ? k(j, P) : j instanceof _ ? j : new _(M(j))).subscribe(console.log);
-  },
+                ht((t) => {
+                    const e = `\n            <li>\n                <span class='name'>${t}</span>\n            </li> \n        `;
+                    mt.innerHTML += e;
+                }),
+                tt(_t),
+            );
+        var xt, gt, St, Et, Tt, Ot;
+        _t.subscribe();
+    },
 ]);

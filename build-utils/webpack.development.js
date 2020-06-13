@@ -34,6 +34,5 @@ module.exports = () => ({
             singleQuote: true,
             endOfLine: 'lf',
         }),
-        // new webpack.WatchIgnorePlugin([ /\.js$/, /\.d\.ts$/ ])
     ],
 });
